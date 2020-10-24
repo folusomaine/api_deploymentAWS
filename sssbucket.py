@@ -1,7 +1,7 @@
 import os
-import boto3, botocore
-from app import app
-from app.projectapi import Flask, jsonify, request
+from . import app
+from .ekscluster import boto3, botocore
+from flask import Flask, jsonify, request
 
 client = boto3.client("s3")
 

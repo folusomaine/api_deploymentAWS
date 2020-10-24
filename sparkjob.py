@@ -1,7 +1,7 @@
-from app import app
-from app.spark_clusters.ekscluster import boto3
-from app.projectapi import Flask, jsonify, request
+from .ekscluster import boto3
+from .ekscluster import Flask, jsonify, request
 import os
+from . import app
 
 client = boto3.client("eks")
 os_basepath = os.environ["HOME"]

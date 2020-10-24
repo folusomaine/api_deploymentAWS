@@ -1,9 +1,9 @@
 import os
 import boto3, botocore
-from app import app
-from app.projectapi import Flask, jsonify, request
+from . import app, sparkjob, sssbucket # entrypoint for flask run
+from flask import Flask, jsonify, request
 from marshmallow import ValidationError
-from app.spark_clusters.validrequest import EksClusterRequest, NodeGroupRequest
+from .validrequest import EksClusterRequest, NodeGroupRequest
 
 eks_requestschema = EksClusterRequest()
 nodegroup_requestschema = NodeGroupRequest()
