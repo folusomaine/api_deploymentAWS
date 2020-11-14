@@ -147,6 +147,7 @@ def create_kub_nodegroup():
     #################################################################
     
     ########################################
+    ## OPTIONAL: Code block can be removed if SPARK function not needed
     ## resolve spark-submit job dependencies
     clusterName = os.environ['clusterName']
     regionCode = os.environ['AWS_DEFAULT_REGION']
@@ -156,6 +157,7 @@ def create_kub_nodegroup():
     cmd2 = f'kubectl create clusterrolebinding {clusterName} --clusterrole cluster-admin --serviceaccount=default:default'
     os.system(cmd1) #run command
     os.system(cmd2) #run command
+    ## END 
     ##########################################
 
     try:
